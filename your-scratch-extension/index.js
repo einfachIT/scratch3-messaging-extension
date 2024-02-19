@@ -1,7 +1,3 @@
-const BlockType = require('../../extension-support/block-type');
-const ArgumentType = require('../../extension-support/argument-type');
-const TargetType = require('../../extension-support/target-type');
-
 class helloWorld {
     constructor() {
     }
