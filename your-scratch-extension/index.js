@@ -29,7 +29,7 @@ class helloWorld {
     }
     sayHelloWorld () {
         // example implementation to return a string
-        return "Hello World!";
+        return hello;
     }
 }
 
