@@ -123,9 +123,9 @@ class Scratch3YourExtension {
       )
       return
     }
-    this.client.subscribe(topic, (err) => {
+    this.client.subscribe(topic,{ qos: 0 }, (err) => {
       if (err) {
-        console.error("Error subscribing to topic:", err)
+        console.error(err)
       } else {
         console.log(`Subscribed to topic: ${topic}`)
       }
@@ -139,11 +139,11 @@ class Scratch3YourExtension {
       )
       return
     }
-    this.client.publish(topic, message, (err) => {
+    this.client.publish(topic, message, { qos: 1, retain: false }, (err) => {
       if (err) {
-        console.error("Error publishing message:", err)
+        console.error(err)
       } else {
-        console.log(`Message published to topic: ${topic}`)
+        console.log(`${message} is published to topic: ${topic}`)
       }
     })
   }
