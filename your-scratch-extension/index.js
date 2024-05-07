@@ -64,9 +64,20 @@ class Scratch3YourExtension {
           },
         },
         {
+          opcode: "newMessage",
+          blockType: BlockType.HAT,
+          text: "New Message from [topic]",
+          arguments: {
+            topic: {
+              type: ArgumentType.STRING,
+              defaultValue: "test/topic",
+            },
+          },
+        },
+        {
           opcode: "getLatestMessage",
           blockType: BlockType.REPORTER,
-          text: "Get latest message from topic [topic]",
+          text: "Message from [topic]",
           arguments: {
             topic: {
               type: ArgumentType.STRING,
@@ -102,10 +113,7 @@ class Scratch3YourExtension {
           console.error("MQTT connection error:", error)
           reject(error)
         })
-        this.client.on("message", (topic, message) => {
-          // Store the latest message for the topic
-          this.latestMessages[topic] = message.toString()
-        })
+  
       }
       script.onerror = (error) => {
         console.error("Something went wrong while loading MQTT library:", error)
@@ -118,36 +126,45 @@ class Scratch3YourExtension {
 
   subscribeToTopic({ topic }) {
     if (!this.client) {
-      console.error(
+      console.log(
         "MQTT client is not initialized. Please connect to MQTT broker first."
       )
       return
     }
     this.client.subscribe(topic,{ qos: 0 }, (err) => {
       if (err) {
-        console.error(err)
+        console.log(err)
       } else {
         console.log(`Subscribed to topic: ${topic}`)
       }
     })
   }
-
+  newMessage(){
+    this.client.on('message', function (topic, message) {
+      console.log("Received message on topic:", topic.toString());
+      console.log("Message:", message.toString());
+      this.latestMessages[topic] = message.toString()
+      // Process the message data (e.g., display in your extension UI)
+      // ...
+    });
+  }
   sendMessage({ topic, message }) {
     if (!this.client) {
-      console.error(
+      console.log(
         "MQTT client is not initialized. Please connect to MQTT broker first."
       )
       return
     }
-    this.client.publish(topic, message, { qos: 1, retain: false }, (err) => {
+    this.client.publish(topic, message, { qos: 1 }, (err) => {
       if (err) {
-        console.error(err)
+        console.log(err)
       } else {
-        console.log(`${message} is published to topic: ${topic}`)
+       
+        console.log(`${message} is published to topic: ${topic} from Publish call`)
       }
     })
   }
-
+    
   getLatestMessage({ topic }) {
     return this.latestMessages[topic] || ""
   }
