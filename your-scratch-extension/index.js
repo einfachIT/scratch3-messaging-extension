@@ -63,17 +63,17 @@ class Scratch3YourExtension {
             },
           },
         },
-        {
-          opcode: "newMessage",
-          blockType: BlockType.HAT,
-          text: "New Message from [topic]",
-          arguments: {
-            topic: {
-              type: ArgumentType.STRING,
-              defaultValue: "test/topic",
-            },
-          },
-        },
+        // {
+        //   opcode: "newMessage",
+        //   blockType: BlockType.HAT,
+        //   text: "New Message from [topic]",
+        //   arguments: {
+        //     topic: {
+        //       type: ArgumentType.STRING,
+        //       defaultValue: "test/topic",
+        //     },
+        //   },
+        // },
         {
           opcode: "getLatestMessage",
           blockType: BlockType.REPORTER,
@@ -113,13 +113,17 @@ class Scratch3YourExtension {
           console.error("MQTT connection error:", error)
           reject(error)
         })
-  
-      }
+      
+      this.client.on("message", (topic, message) => {
+        // Store the latest message for the topic
+          this.latestMessages[topic].push(message.toString());
+
+      })
       script.onerror = (error) => {
         console.error("Something went wrong while loading MQTT library:", error)
         reject(error)
       }
-
+    }
       document.head.appendChild(script)
     })
   }
@@ -139,15 +143,9 @@ class Scratch3YourExtension {
       }
     })
   }
-  newMessage(){
-    this.client.on('message', function (topic, message) {
-      console.log("Received message on topic:", topic.toString());
-      console.log("Message:", message.toString());
-      this.latestMessages[topic] = message.toString()
-      // Process the message data (e.g., display in your extension UI)
-      // ...
-    });
-  }
+  // newMessage(){
+    
+  // }
   sendMessage({ topic, message }) {
     if (!this.client) {
       console.log(
@@ -159,7 +157,6 @@ class Scratch3YourExtension {
       if (err) {
         console.log(err)
       } else {
-       
         console.log(`${message} is published to topic: ${topic} from Publish call`)
       }
     })
