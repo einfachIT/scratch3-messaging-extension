@@ -130,5 +130,6 @@ Navigate to the `scratch-gui` and run the following command
 ```bash
 npm start
 ```
-
+go the browser and run the following URL \
+`http://localhost:8602/`
 
