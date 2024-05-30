@@ -116,7 +116,7 @@ class Scratch3YourExtension {
       
       this.client.on("message", (topic, message) => {
         // Store the latest message for the topic
-          this.latestMessages[topic].push(message.toString());
+          this.latestMessages[topic] = message.toString();
 
       })
       script.onerror = (error) => {
