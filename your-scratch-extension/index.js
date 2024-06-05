@@ -17,7 +17,7 @@ class Scratch3YourExtension {
             id: 'yourScratchExtension',
 
             // name that will be displayed in the Scratch UI
-            name: 'CircleArea',
+            name: 'Pre-project',
 
             // colours to use for your extension blocks
             color1: '#000099',
@@ -34,16 +34,16 @@ class Scratch3YourExtension {
 
                     blockType: BlockType.REPORTER,
 
-                    text: 'Circle radius [MY_NUMBER]',
+                    text: 'Pre-Project [MY_TEXT]',
 
                     terminal: false,
 
                     filter: [ TargetType.SPRITE, TargetType.STAGE ],
 
                     arguments: {
-                        MY_NUMBER: {
-                            defaultValue: 5,
-                            type: ArgumentType.NUMBER
+                        MY_TEXT: {
+                            defaultValue: 'Hello World!',
+                            type: ArgumentType.STRING
                         }
                     }
                 }
@@ -52,8 +52,8 @@ class Scratch3YourExtension {
     }
 
 
-    myFirstBlock ({ MY_NUMBER }) {
-        return 'The circle area is: ' + (3.14 * (MY_NUMBER ** 2));
+    myFirstBlock ({ MY_TEXT }) {
+        return MY_TEXT;
     }
 }
 
