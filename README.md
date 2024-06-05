@@ -13,6 +13,7 @@ This guide outlines the steps to install Scratch 3 on your Raspberry Pi and inte
  ```bash
 sudo apt install npm
 ```
+**Note:** If first try doesn't work please try again.
 
 ## Installation Steps
 
@@ -44,18 +45,22 @@ git clone https://github.com/llk/scratch-vm
 
 ### 3. Install Dependencies
 - Navigate to the scratch-vm directory and install dependencies:
+- npm link need root privileges. please run this with **sudo**.
 ```bash
 cd scratch-vm
 npm install
-npm link
+sudo npm link
 ```
+
 ![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/fd8b3406-0f0c-483c-b7e7-c265a318257e)
 
 - Navigate to the scratch-gui directory, install dependencies, and link scratch-vm:
+- npm link need root privileges. please run this with **sudo**.
+  
 ```bash
 cd ../scratch-gui
 npm install
-npm link scratch-vm
+sudo npm link scratch-vm
 ```
 ![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/4996430d-d436-44a2-abda-3f969d222eef)
 
