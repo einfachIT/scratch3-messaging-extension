@@ -8,6 +8,11 @@ This guide outlines the steps to install Scratch 3 on your Raspberry Pi and inte
 
 1. **Raspberry Pi with Raspbian OS installed**
 2. **Basic understanding of command-line interface (CLI) usage**
+3. **npm (Node Package Manager) installed**
+    - you can install **npm** by the following command
+ ```bash
+sudo apt install npm
+```
 
 ## Installation Steps
 
