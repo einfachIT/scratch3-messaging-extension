@@ -16,7 +16,7 @@ class Scratch3YourExtension {
     return {
       // unique ID for your extension
       id: "mqtt",
-
+      
       // name that will be displayed in the Scratch UI
       name: "MQTT Extension",
 
@@ -117,7 +117,6 @@ class Scratch3YourExtension {
       this.client.on("message", (topic, message) => {
         // Store the latest message for the topic
           this.latestMessages[topic] = message.toString();
-
       })
       script.onerror = (error) => {
         console.error("Something went wrong while loading MQTT library:", error)
@@ -152,6 +151,7 @@ class Scratch3YourExtension {
         "MQTT client is not initialized. Please connect to MQTT broker first."
       )
       return
+      
     }
     this.client.publish(topic, message, { qos: 1 }, (err) => {
       if (err) {
