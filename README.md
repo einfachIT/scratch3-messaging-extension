@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This guide outlines the steps to install Scratch 3 on your Raspberry Pi and integrate a custom extension for enhanced functionality. The custom extension you'll be using focuses on **Hello World** Extension (replace with the actual extension's purpose if different).
+This guide outlines the steps to install Scratch 3 on your Raspberry Pi and integrate a custom extension for enhanced functionality. The custom extension you'll be using focuses on **MQTT** Extension.
 
 ## Prerequisites
 
@@ -66,19 +66,19 @@ sudo npm link scratch-vm
 
 
 ## Custom Extension Implementation (Scratch-vm)
-### 1. Create a Directory (scratch3_helloworld)
+### 1. Create a Directory (scratch3_mqtt)
 - Navigate to the `scratch-vm/src/extensions` directory and create a directory (scratch3_helloworld)
   
 ```bash
 cd ../scratch-vm/src/extensions
-mkdir scratch3_helloworld
+mkdir scratch3_mqtt
 ```
 ![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/509ec20a-9b88-4fb4-9197-4e9679946432)
 
 ### 2. Download Extension Code
-  Navigate to the new created directory `scratch3_helloworld` and download the custom extension index.js file
+  Navigate to the new created directory `scratch3_mqtt` and download the custom extension index.js file
 ```bash
-cd scratch3_helloword
+cd scratch3_mqtt
 curl -O -L https://github.com/einfachIT/scratch3-messaging-extension/blob/hello-world-extension/your-scratch-extension/index.js
 ```
 ![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/49470260-29ec-4208-b312-a0b9588f2796)
@@ -88,17 +88,17 @@ curl -O -L https://github.com/einfachIT/scratch3-messaging-extension/blob/hello-
 In `scratch-vm/src/extension-support` directory, add your custom extension to the builtinExtensions object in `extension-manager.js` file
 Add the following line:
 ```javascript
-helloworld: () => require('../extensions/scratch3_helloworld'),
+mqtt: () => require('../extensions/scratch3_mqtt'),
 ```
 ![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/2f1387f8-9493-4e23-92ce-cd2fcc128d65)
 
 ## Create Custom Extension UI Files (scratch-gui)
 
 ### 1. Create a new directory
-Create a new directory by the name of `helloworld` within `scratch-gui/src/lib/libraries/extensions`.
+Create a new directory by the name of `mqtt` within `scratch-gui/src/lib/libraries/extensions`.
 
 ### 2. Add Icons for the Extension
-Place your extension's icon images (.png and .svg) inside the newly created directory `helloworld` in `scratch-gui/src/lib/libraries/extensions`.
+Place your extension's icon images (.png and .svg) inside the newly created directory `mqtt` in `scratch-gui/src/lib/libraries/extensions`.
   
 ![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/294d6d90-3b8f-413b-9b7a-f0ce704e98e0)
 
@@ -106,26 +106,26 @@ Place your extension's icon images (.png and .svg) inside the newly created dire
 In `scratch-gui/src/lib/libraries/extensions/index.jsx`, import your extension's icon URLs and add it to the registeredExtensions array:
 
 ```javascript
-import helloworldIconURL from "./helloworld/helloworld.png"
-import helloworldInsetIconURL from "./helloworld/helloworld-small.svg"
+import mqttIconURL from "./mqtt/mqtt.png"
+import mqttInsetIconURL from "./mqtt/mqtt-small.svg"
 
 export default = [
   // ... other extensions
   {
     name: (
       <FormattedMessage
-        defaultMessage="helloworld" // Replace with your extension's name
-        description="Name for the 'helloworld' extension"
-        id="gui.extension.helloworld.name"
+        defaultMessage="mqtt" // Replace with your extension's name
+        description="Name for the 'mqtt' extension"
+        id="gui.extension.mqtt.name"
       />
     ),
-    extensionId: "helloworld",
-    iconURL: helloworldIconURL,
-    insetIconURL: helloworldInsetIconURL,
+    extensionId: "mqtt",
+    iconURL: mqttIconURL,
+    insetIconURL: mqttInsetIconURL,
     description: (
       <FormattedMessage
-        defaultMessage="helloworld extension" // Replace with your extension's description
-        id="gui.extension.helloworld.description"
+        defaultMessage="mqtt extension"
+        id="gui.extension.mqtt.description"
       />
     ),
     featured: true,
