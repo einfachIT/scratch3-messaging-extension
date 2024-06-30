@@ -73,7 +73,7 @@ sudo npm link scratch-vm
 cd ../scratch-vm/src/extensions
 mkdir scratch3_mqtt
 ```
-![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/509ec20a-9b88-4fb4-9197-4e9679946432)
+![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/b4acf3a5-d063-42ca-b432-5575e547e4ed)
 
 ### 2. Download Extension Code
   Navigate to the new created directory `scratch3_mqtt` and download the custom extension index.js file
