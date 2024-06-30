@@ -101,7 +101,8 @@ Create a new directory by the name of `mqtt` within `scratch-gui/src/lib/librari
 ### 2. Add Icons for the Extension
 Place your extension's icon images (.png and .svg) inside the newly created directory `mqtt` in `scratch-gui/src/lib/libraries/extensions`.
   
-![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/294d6d90-3b8f-413b-9b7a-f0ce704e98e0)
+![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/aead260e-cd13-4bf1-8aa9-4fa161b4e796)
+
 
 ### 3. Update Extension List
 In `scratch-gui/src/lib/libraries/extensions/index.jsx`, import your extension's icon URLs and add it to the registeredExtensions array:
@@ -133,8 +134,6 @@ export default = [
   },
 ];
 ```
-![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/8f365e0e-0135-41ce-aca2-d84535834b4b)
-
 
 ## Start Scratch
 Navigate to the `scratch-gui` and run the following command
