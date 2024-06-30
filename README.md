@@ -67,7 +67,7 @@ sudo npm link scratch-vm
 
 ## Custom Extension Implementation (Scratch-vm)
 ### 1. Create a Directory (scratch3_mqtt)
-- Navigate to the `scratch-vm/src/extensions` directory and create a directory (scratch3_helloworld)
+- Navigate to the `scratch-vm/src/extensions` directory and create a directory (scratch3_mqtt)
   
 ```bash
 cd ../scratch-vm/src/extensions
@@ -79,7 +79,7 @@ mkdir scratch3_mqtt
   Navigate to the new created directory `scratch3_mqtt` and download the custom extension index.js file
 ```bash
 cd scratch3_mqtt
-curl -O -L https://github.com/einfachIT/scratch3-messaging-extension/blob/hello-world-extension/your-scratch-extension/index.js
+curl -O -L https://github.com/einfachIT/scratch3-messaging-extension/blob/mqtt-extension/your-scratch-extension/index.js
 ```
 ![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/49470260-29ec-4208-b312-a0b9588f2796)
 
