@@ -90,7 +90,8 @@ Add the following line:
 ```javascript
 mqtt: () => require('../extensions/scratch3_mqtt'),
 ```
-![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/2f1387f8-9493-4e23-92ce-cd2fcc128d65)
+![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/e95cd467-c31b-4b54-bb5a-5fe91cd967db)
+
 
 ## Create Custom Extension UI Files (scratch-gui)
 
