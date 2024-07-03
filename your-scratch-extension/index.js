@@ -63,17 +63,17 @@ class Scratch3YourExtension {
             },
           },
         },
-        // {
-        //   opcode: "newMessage",
-        //   blockType: BlockType.HAT,
-        //   text: "New Message from [topic]",
-        //   arguments: {
-        //     topic: {
-        //       type: ArgumentType.STRING,
-        //       defaultValue: "test/topic",
-        //     },
-        //   },
-        // },
+        {
+          opcode: "newMessage",
+          blockType: BlockType.HAT,
+          text: "New Message from [topic]",
+          arguments: {
+            topic: {
+              type: ArgumentType.STRING,
+              defaultValue: "test/topic",
+            },
+          },
+        },
         {
           opcode: "getLatestMessage",
           blockType: BlockType.REPORTER,
@@ -142,9 +142,11 @@ class Scratch3YourExtension {
       }
     })
   }
-  // newMessage(){
-    
-  // }
+
+  newMessage({topic}){
+        return this.latestMessages[topic] || ""
+  }
+
   sendMessage({ topic, message }) {
     if (!this.client) {
       console.log(
@@ -161,6 +163,9 @@ class Scratch3YourExtension {
       }
     })
   }
+  // nMessage({topic}){
+  //    return this.latestMessages[topic] || ""
+  // }
     
   getLatestMessage({ topic }) {
     return this.latestMessages[topic] || ""
