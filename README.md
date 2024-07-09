@@ -79,7 +79,7 @@ mkdir scratch3_mqtt
   Navigate to the new created directory `scratch3_mqtt` and download the custom extension index.js file
 ```bash
 cd scratch3_mqtt
-curl -O -L https://github.com/einfachIT/scratch3-messaging-extension/blob/master/your-scratch-extension/index.js
+curl -O -L https://raw.githubusercontent.com/einfachIT/scratch3-messaging-extension/master/mqtt-extension/index.js
 ```
 ![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/49470260-29ec-4208-b312-a0b9588f2796)
 
