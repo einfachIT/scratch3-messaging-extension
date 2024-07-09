@@ -98,7 +98,14 @@ mqtt: () => require('../extensions/scratch3_mqtt'),
 ### 1. Create a new directory
 Create a new directory by the name of `mqtt` within `scratch-gui/src/lib/libraries/extensions`.
 
-### 2. Add Icons for the Extension
+### 2. Donwload and Add Icons for the Extension
+```bash
+curl -O -L https://raw.githubusercontent.com/einfachIT/scratch3-messaging-extension/master/mqtt.png
+```
+```bash
+curl -O -L https://raw.githubusercontent.com/einfachIT/scratch3-messaging-extension/master/mqtt-small.svg
+```
+
 Place your extension's icon images (.png and .svg) inside the newly created directory `mqtt` in `scratch-gui/src/lib/libraries/extensions`.
   
 ![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/aead260e-cd13-4bf1-8aa9-4fa161b4e796)
