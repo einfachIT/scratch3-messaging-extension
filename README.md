@@ -49,17 +49,15 @@ In the terminal at the bottom of the window, run:
 ./3-run-private.sh
 ```
 
-![screenshot](./docs/52-run.png)
+![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/f023e523-bf4d-4789-8d73-892dfdc33391)
+
 
 A pop-up should appear in the bottom-right with a button to open a private window with your modified version of Scratch.
 
-![screenshot](./docs/53-running.png)
+![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/56f9add3-b9b3-43fb-b6fb-cf46139b51b9)
 
-If it doesn't appear, or you accidentally dismiss it, you can get the link from the **Open in browser** button on the **Ports** tab.
 
-![screenshot](./docs/54-open-in-browser.png)
-
-Either way, click on **Open in browser**.
+click on **Open in browser**.
 
 ![screenshot](./docs/55-private-scratch.png)
 
