@@ -6,8 +6,8 @@ index ba18b91..e316f38 100644
  import React from 'react';
  import {FormattedMessage} from 'react-intl';
  
-+import yourExtensionInsetIconURL from './yourextension/your-extension-icon.png';
-+import yourExtensionIconURL from './yourextension/your-extension-background.png';
++import yourExtensionInsetIconURL from './yourextension/mqtt-small.svg';
++import yourExtensionIconURL from './yourextension/mqtt.png';
 +
  import musicIconURL from './music/music.png';
  import musicInsetIconURL from './music/music-small.svg';
