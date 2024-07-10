@@ -1,3 +1,100 @@
+---
+
+## Launch codespaces
+
+Click on **Code** -> **Codespaces** -> **Create codespace**
+
+![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/89e457e3-c9bc-4a52-b4e4-fd8c93b61c0f)
+
+It can take a minute or two to set up your codespace.
+
+Your codespace is ready for use.
+
+![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/63959f1d-a7c1-42ee-8c86-8b0ce7d88350)
+
+---
+
+## Set up your repository
+
+In the terminal at the bottom of the window, run:
+```sh
+./0-setup.sh
+```
+
+![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/e2b7cd60-3ca9-4264-9f89-056f3bb019bc)
+
+
+This should be very quick.
+
+You only need to do this once (but it is safe if you run it again).
+
+![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/605f9eea-bea7-4dc8-ad36-767606e6e8f7)
+
+---
+
+## Launch a private test of MQTT extension
+
+In the terminal at the bottom of the window, run:
+```sh
+./2-build.sh
+```
+
+![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/af43a9e6-8093-4955-b098-c111a63e0b6b)
+
+
+This can take a minute to run. Wait for this to complete.
+
+In the terminal at the bottom of the window, run:
+```sh
+./3-run-private.sh
+```
+
+![screenshot](./docs/52-run.png)
+
+A pop-up should appear in the bottom-right with a button to open a private window with your modified version of Scratch.
+
+![screenshot](./docs/53-running.png)
+
+If it doesn't appear, or you accidentally dismiss it, you can get the link from the **Open in browser** button on the **Ports** tab.
+
+![screenshot](./docs/54-open-in-browser.png)
+
+Either way, click on **Open in browser**.
+
+![screenshot](./docs/55-private-scratch.png)
+
+This is a private copy of Scratch that only you can access. You can use this to test your new extension.
+
+Click on the **Extensions** button.
+
+![screenshot](./docs/55-extensions-button.png)
+
+You should see your extension added to the menu. Click on it.
+
+![screenshot](./docs/55-extensions-menu.png)
+
+Make a simple Scratch project using your extension.
+
+![screenshot](./docs/56-testing.png)
+
+If you need to make a change, stop your Scratch test by pressing **Control-C** in the terminal.
+
+Make your code changes.
+
+Then re-build and test again by typing:
+```sh
+./2-build.sh
+./3-run-private.sh
+```
+
+Once you have finished, stop your Scratch test by pressing **Control-C** in the terminal.
+
+![screenshot](./docs/57-stop-test.png)
+
+---
+
+
+
 # Scratch 3 with Custom Extension Installation Guide (Raspberry Pi)
 
 ## Introduction
