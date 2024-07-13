@@ -181,5 +181,8 @@ cd ../../../../../
 npm start
 ```
 go the browser and run the following URL \
-`http://localhost:8602/`
+
+```bash
+http://localhost:8602/
+```
 
