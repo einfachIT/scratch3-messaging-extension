@@ -102,6 +102,11 @@ mqtt: () => require('../extensions/scratch3_mqtt'),
 ### 1. Create a new directory
 Create a new directory by the name of `mqtt` within `scratch-gui/src/lib/libraries/extensions`.
 
+```bash
+cd ../../../../scratch-gui/src/lib/libraries/extensions
+mkdir mqtt
+```
+
 ### 2. Donwload and Add Icons for the Extension
 ```bash
 curl -O -L https://raw.githubusercontent.com/einfachIT/scratch3-messaging-extension/master/mqtt.png
