@@ -172,6 +172,11 @@ Save the file with **CTRL + S**
 
 ## Start Scratch
 Navigate to the `scratch-gui` and run the following command
+
+```bash
+cd ../../../../../
+```
+
 ```bash
 npm start
 ```
