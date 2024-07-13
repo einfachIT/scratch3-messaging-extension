@@ -127,15 +127,22 @@ curl -O -L https://raw.githubusercontent.com/einfachIT/scratch3-messaging-extens
 
 
 ### 3. Update Extension List
-In `scratch-gui/src/lib/libraries/extensions/index.jsx`, import your extension's icon URLs and add it to the registeredExtensions array:
+Goto  `scratch3` folder in the `home/[username]` using file explorer \
+open `index.jsx` file in `scratch-gui/src/lib/libraries/extensions/'
 
+import your extension's icon URLs and add it to the registeredExtensions array:
+
+add the following line in the top of index.jsx file where other icons are imported.
 ```javascript
 import mqttIconURL from "./mqtt/mqtt.png"
 import mqttInsetIconURL from "./mqtt/mqtt-small.svg"
+```
+ add the following lines to the export default array
 
-export default = [
-  // ... other extensions
-  {
+find **export default = [** pase it here
+
+```javascript
+ {
     name: (
       <FormattedMessage
         defaultMessage="mqtt" // Replace with your extension's name
@@ -154,8 +161,8 @@ export default = [
     ),
     featured: true,
   },
-];
 ```
+Save the file with **CTRL + S**
 
 ## Start Scratch
 Navigate to the `scratch-gui` and run the following command
