@@ -89,8 +89,11 @@ curl -O -L https://raw.githubusercontent.com/einfachIT/scratch3-messaging-extens
 
 
 ### 3. Update Extension Manager
-In `scratch-vm/src/extension-support` directory, add your custom extension to the builtinExtensions object in `extension-manager.js` file
-Add the following line:
+Open `scratch3` folder in the `home/[username]` \
+goto `scratch-vm/src/extension-support` \
+open  `extension-manager.js` file \
+and add Add the following line to the builtinExtensions object like other extensions \
+
 ```javascript
 mqtt: () => require('../extensions/scratch3_mqtt'),
 ```
