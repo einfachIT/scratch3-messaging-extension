@@ -132,10 +132,10 @@ open `index.jsx` file in `scratch-gui/src/lib/libraries/extensions/'
 
 import your extension's icon URLs and add it to the registeredExtensions array:
 
-add the following line in the top of index.jsx file where other icons are imported.
+add the following lines in the index.jsx file after react where other icons are imported.
 ```javascript
-import mqttIconURL from "./mqtt/mqtt.png"
-import mqttInsetIconURL from "./mqtt/mqtt-small.svg"
+import mqttIconURL from "./mqtt/mqtt.png";
+import mqttInsetIconURL from "./mqtt/mqtt-small.svg";
 ```
  add the following lines to the export default array
 
@@ -163,6 +163,9 @@ find **export default = [** pase it here
   },
 ```
 Save the file with **CTRL + S**
+
+![image](https://github.com/user-attachments/assets/8b3635ce-68c8-478e-96d4-76321a456f25)
+
 
 ## Start Scratch
 Navigate to the `scratch-gui` and run the following command
