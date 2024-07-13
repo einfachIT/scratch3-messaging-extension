@@ -20,7 +20,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
    - To install Node , you should run the the following command
     
 ```bash
-npm install -g node
+nvm install -g node
 ```
 
 ## Installation Steps
