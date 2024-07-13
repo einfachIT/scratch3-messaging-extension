@@ -43,9 +43,6 @@ Clone the Scratch GUI and VM repositories:
 
 ```bash
 git clone https://github.com/llk/scratch-gui
-```
-
-```bash
 git clone https://github.com/llk/scratch-vm
 ```
 ![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/23d5ebb1-352c-497d-94ad-61b482c79c55)
@@ -53,22 +50,21 @@ git clone https://github.com/llk/scratch-vm
 
 ### 3. Install Dependencies
 - Navigate to the scratch-vm directory and install dependencies:
-- npm link need root privileges. please run this with **sudo**.
+
 ```bash
 cd scratch-vm
 npm install
-sudo npm link
+npm link
 ```
 
 ![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/fd8b3406-0f0c-483c-b7e7-c265a318257e)
 
 - Navigate to the scratch-gui directory, install dependencies, and link scratch-vm:
-- npm link need root privileges. please run this with **sudo**.
   
 ```bash
 cd ../scratch-gui
 npm install
-sudo npm link scratch-vm
+npm link scratch-vm
 ```
 ![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/4996430d-d436-44a2-abda-3f969d222eef)
 
