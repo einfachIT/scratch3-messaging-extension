@@ -137,6 +137,8 @@ add the following lines in the index.jsx file after react where other icons are 
 import mqttIconURL from "./mqtt/mqtt.png";
 import mqttInsetIconURL from "./mqtt/mqtt-small.svg";
 ```
+![image](https://github.com/user-attachments/assets/8b3635ce-68c8-478e-96d4-76321a456f25)
+
  add the following lines to the export default array
 
 find **export default = [** pase it here
@@ -164,7 +166,8 @@ find **export default = [** pase it here
 ```
 Save the file with **CTRL + S**
 
-![image](https://github.com/user-attachments/assets/8b3635ce-68c8-478e-96d4-76321a456f25)
+![image](https://github.com/user-attachments/assets/9b8cb56a-3b3d-48fa-b966-4da33f54a614)
+
 
 
 ## Start Scratch
