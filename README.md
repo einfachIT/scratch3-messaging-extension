@@ -99,6 +99,7 @@ and add Add the following line to the builtinExtensions object like other extens
 ```javascript
 mqtt: () => require('../extensions/scratch3_mqtt'),
 ```
+after adding the above line save it with `ctrl+s`
 ![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/e95cd467-c31b-4b54-bb5a-5fe91cd967db)
 
 
