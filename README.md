@@ -92,6 +92,8 @@ curl -O -L https://raw.githubusercontent.com/einfachIT/scratch3-messaging-extens
 Open `scratch3` folder in the `home/[username]` \
 goto `scratch-vm/src/extension-support` \
 open  `extension-manager.js` file \
+![image](https://github.com/user-attachments/assets/07811fcb-6dcb-483a-9c12-19f42f9b05f4)
+
 and add Add the following line to the builtinExtensions object like other extensions \
 
 ```javascript
