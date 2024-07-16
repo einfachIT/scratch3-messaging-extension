@@ -17,10 +17,14 @@ This guide outlines the steps to install Scratch 3 on your Raspberry Pi and inte
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 ``` 
 
-   - To install Node , you should run the the following command
+   - To install Node and NPM, you should run the the following commands
     
 ```bash
-nvm install 14
+nvm install node
+```
+
+```bash
+nvm install --latest-npm
 ```
 
 ## Installation Steps
@@ -54,6 +58,14 @@ git clone https://github.com/llk/scratch-vm
 ```bash
 cd scratch-vm
 npm install
+```
+Note: if there is Overriding peer dependency error on npm install
+   - Run it with `--legacy-peer-deps`
+```bash
+npm install --legacy-peer-deps
+```
+  - Install Link dependency
+```bash
 npm link
 ```
 
@@ -64,8 +76,17 @@ npm link
 ```bash
 cd ../scratch-gui
 npm install
+```
+Note: if there is Overriding peer dependency error on npm install
+   - Run it with `--legacy-peer-deps`
+```bash
+npm install --legacy-peer-deps
+```
+  - Install Link dependency with scratch-vm
+```bash
 npm link scratch-vm
 ```
+
 ![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/4996430d-d436-44a2-abda-3f969d222eef)
 
 
