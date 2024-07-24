@@ -207,3 +207,31 @@ go the browser and run the following URL \
 http://localhost:8602/
 ```
 
+
+# Using the MQTT Extension in Scratch3
+
+## 1. Load the Extension:
+   - In the Scratch interface, click on the "Extensions" button (a puzzle piece icon at the bottom left).
+   - Your custom MQTT extension should appear in the list of available extensions. Click on it to load the extension into your project.
+
+![image](https://github.com/user-attachments/assets/bd32e64e-ea02-4449-9bd6-c66f247b5bd0)
+
+
+## 2. Using MQTT Blocks:
+   - Connect to MQTT Broker:
+      - Drag the "Connect to MQTT Broker" block into your scripts area. Use this block to establish a connection to the MQTT broker.
+        
+   - Subscribe to a Topic:
+      - Drag the "Subscribe to topic [topic]" block into your scripts area. Replace [topic] with the topic you want to subscribe to.
+   
+   - Send a Message:
+      - Drag the "Send message [message] to topic [topic]" block into your scripts area. Replace [message] with the message you want to send and [topic] with the target topic.
+
+   - New Message Event:
+      - Use the "New Message from [topic]" block as a hat block to trigger scripts when a new message is received on the specified topic.
+ 
+   - Get Latest Message:
+      - rag the "Message from [topic]" block into your scripts area. This reporter block returns the latest message received from the specified topic. 
+
+
+
