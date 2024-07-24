@@ -207,7 +207,35 @@ go the browser and run the following URL \
 http://localhost:8602/
 ```
 
+# Installing and Configuring Mosquitto MQTT broker over WebSockets
 
+   1. **Initial installation of dependencies:**
+      
+      First of all, you need to make sure that our environment has the necessary build tools to complete the setup
+      
+```bash
+sudo apt-get install -y mosquitto mosquitto-clients
+```
+
+   2. Configure Mosquitto to use WebSocket
+      
+# Installing Uncomplicated Firewall (UFW)
+   - we will install UFV firewall to block all other connection except localhost to access mosquittio broker server from scratch enviroment.
+
+        1. **Install (UFW):** \
+              to install (UFW) run following command in the terminal. 
+     
+              ```bash
+              sudo apt install ufw
+              ```
+     
+        2. **Enable (UFW):** \
+             to enable (UFW) run following command in the terminal  
+     
+              ```bash
+              sudo ufw enable
+              ```
+     
 # Using the MQTT Extension in Scratch3
 
 ### Overview
