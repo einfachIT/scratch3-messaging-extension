@@ -210,28 +210,57 @@ http://localhost:8602/
 
 # Using the MQTT Extension in Scratch3
 
+### Overview
+
+   The MQTT Extension for Scratch 3 allows you to connect, subscribe, and publish messages to an MQTT broker. This guide will help you get started with using the extension in your Scratch projects.
+   
 ## 1. Load the Extension:
    - In the Scratch interface, click on the "Extensions" button (a puzzle piece icon at the bottom left).
-   - Your custom MQTT extension should appear in the list of available extensions. Click on it to load the extension into your project.
+     
+     ![image](https://github.com/user-attachments/assets/bd32e64e-ea02-4449-9bd6-c66f247b5bd0)
 
-![image](https://github.com/user-attachments/assets/bd32e64e-ea02-4449-9bd6-c66f247b5bd0)
+   - Your custom MQTT extension should appear in the list of available extensions. Click on it to load the extension into your project.
+     
+     ![image](https://github.com/user-attachments/assets/4aa9ee5c-2042-44b3-bbe6-8cacd7423f84)
+
+   - You will have a blocks in your project
+     
+      ![image](https://github.com/user-attachments/assets/df12b488-e128-43d3-b0c2-1847f5fd8346)
+
+
 
 
 ## 2. Using MQTT Blocks:
+   
    - Connect to MQTT Broker:
       - Drag the "Connect to MQTT Broker" block into your scripts area. Use this block to establish a connection to the MQTT broker.
+        ![image](https://github.com/user-attachments/assets/1cd5449b-a44a-45ac-87c7-71d85db3011f)
+
         
    - Subscribe to a Topic:
       - Drag the "Subscribe to topic [topic]" block into your scripts area. Replace [topic] with the topic you want to subscribe to.
-   
+        
+         ![image](https://github.com/user-attachments/assets/b92f6f28-ddfd-4e94-a435-74cf429ba8e8)
+
    - Send a Message:
       - Drag the "Send message [message] to topic [topic]" block into your scripts area. Replace [message] with the message you want to send and [topic] with the target topic.
 
+        ![image](https://github.com/user-attachments/assets/23d9d1f6-1ce9-46bf-9dd5-f6db2070318b)
+
+
    - New Message Event:
       - Use the "New Message from [topic]" block as a hat block to trigger scripts when a new message is received on the specified topic.
+
+        ![image](https://github.com/user-attachments/assets/7eee9738-0794-456a-876f-0267c2a593d7)
+
  
    - Get Latest Message:
-      - rag the "Message from [topic]" block into your scripts area. This reporter block returns the latest message received from the specified topic. 
+      - Drag the "Message from [topic]" block into your scripts area. This reporter block returns the latest message received from the specified topic.
+        
+        ![image](https://github.com/user-attachments/assets/d97e331b-9173-4e96-94a9-4dc6267b5c9d)
+
+        ![image](https://github.com/user-attachments/assets/0237d237-cafc-47be-847c-7be484d4af15)
+
 
 
 
