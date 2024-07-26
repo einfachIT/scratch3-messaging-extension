@@ -225,7 +225,6 @@ after adding the above line save it with `ctrl+s`
 <a id="mqtt"></a>
 ### Create a new directory (mqtt)
 Create a new directory by the name of `mqtt` within `scratch-gui/src/lib/libraries/extensions`.
-COMMENT BASTIAN: ../../../../scratch-gui/src/lib/libraries/extensions does not exist, should be ../../../scratch-gui/src/lib/libraries/extensions
 
 ```bash
 cd ../../../../scratch-gui/src/lib/libraries/extensions
