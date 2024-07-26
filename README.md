@@ -198,6 +198,8 @@ mkdir scratch3_mqtt
 <a id="DownloadExtensionCode"></a>
 ### Download Extension Code
   Navigate to the new created directory `scratch3_mqtt` and download the custom extension index.js file
+
+  COMMENT BASTIAN: this does not work. 1. the url is wrong mqtt-extension is your-scratch-extension. 2. this is a private repo, but also then I get 404:file not found when downloading with curl. Did you test this?
 ```bash
 cd scratch3_mqtt
 curl -O -L https://raw.githubusercontent.com/einfachIT/scratch3-messaging-extension/master/mqtt-extension/index.js
