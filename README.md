@@ -65,10 +65,10 @@
    ```bash
    sudo mosquitto -c /etc/mosquitto/mosquitto.conf
    ```
-   - Restart the broker server by the following command
+   - Restart the broker server by the following command (COMMENT BASTIAN: this does not start mosquitto, but configures mosquitto to be automatically startet at bootup, change wording)
 
    ```bash
-   sudo systemctl enable mosquitto COMMENT BASTIAN: this does not start mosquitto, but configures mosquitto to be automatically startet at bootup, change wording
+   sudo systemctl enable mosquitto
    ```
    - now the broker server will listen to the `htpp://localhost:8883/` which is configured in the mqtt extension code.
 
@@ -105,7 +105,7 @@ This guide outlines the steps to install Scratch 3 on your Raspberry Pi and inte
 2. **Basic understanding of command-line interface (CLI) usage**
 3. **Node.js and npm installed**
    - We strongly recommend using a Node version manager like nvm to install Node.js and npm.
-   - To install or update nvm, you should run the following command COMMANT BASTIAN: zou need to open a new shell here, otherwise you get command not found. Please adapt
+   - To install or update nvm, you should run the following command COMMENT BASTIAN: zou need to open a new shell here, otherwise you get command not found. Please adapt
    
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
