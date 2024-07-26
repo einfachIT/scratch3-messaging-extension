@@ -260,7 +260,7 @@ import mqttInsetIconURL from "./mqtt/mqtt-small.svg";
 
  add the following lines to the export default array
 
-find **export default = [** pase it here
+find **export default = [** pase it here   COMMENT BASTIAN: fix indentation, so opening and closing brackets match indentation.
 
 ```javascript
  {
