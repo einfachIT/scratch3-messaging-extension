@@ -135,7 +135,7 @@ cd scratch3
 
 <a id="Clone-Scratch-Repositories"></a>
 ## Clone Scratch Repositories
-Clone the Scratch GUI and VM repositories: COMMENT BASTIAN: If I copy paste the following command, only scratch-vm is created. Do not know why, but tried it twice
+Clone the Scratch GUI and VM repositories:
 
 ```bash
 git clone https://github.com/llk/scratch-gui
