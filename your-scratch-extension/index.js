@@ -2,15 +2,19 @@ const BlockType = require("../../extension-support/block-type")
 const ArgumentType = require("../../extension-support/argument-type")
 const TargetType = require("../../extension-support/target-type")
 
-
+class Node {
+  constructor(data) {
+     this.data = data;
+ }
+}
 
 class Queue {
   constructor() {
      this.elements = [];
   }
   
-  enqueue(node) {
-     this.elements.push(node);
+  enqueue(item) {
+     this.elements.push(item);
   }
 
   dequeue() {
@@ -37,6 +41,33 @@ class Queue {
   }
 }
 
+
+
+// class TopicQueue {
+//   constructor() {
+//     this.queues = []
+//   }
+
+//   enqueue(item) {
+//     this.queues.push(item);
+//   }
+
+//   dequeue(topic) {
+//     const index = this.queues.findIndex(item => item.topic === topic);
+//     if (index !== -1) {
+//       const removedItem = this.queues.splice(index, 1)[0];
+//       return removedItem.message;
+//     } else {
+//       return 'Item not found';
+//     }
+//   }
+
+//   isEmpty(topic) {
+//     const queue = this.queues[topic];
+//     return !queue || queue.length === 0;
+//   }
+// }
+// const topicQueue = new TopicQueue();
 const queue = new Queue();
 
 class Scratch3YourExtension {
@@ -44,7 +75,7 @@ class Scratch3YourExtension {
     this.runtime = runtime
     this.client = null
     this.latestMessages = {}
-    
+    this.returnMessage = null
   }
 
   /**
@@ -155,6 +186,8 @@ class Scratch3YourExtension {
         // Store the latest message for the topic
           // this.latestMessages[topic] = message.toString();
           queue.enqueue({[topic]: message.toString()});
+          // topicQueue.enqueue({ topic: topic, message: message.toString() });
+          console.log(queue.elements)
       })
       script.onerror = (error) => {
         console.error("Something went wrong while loading MQTT library:", error)
@@ -181,12 +214,6 @@ class Scratch3YourExtension {
     })
   }
 
-  newMessage({topic}){
-        // return this.latestMessages[topic] || ""
-        // console.log(queue.print());
-    
-        return queue.dequeue();
-  }
 
   sendMessage({ topic, message }) {
     if (!this.client) {
@@ -201,16 +228,29 @@ class Scratch3YourExtension {
         console.log(err)
       } else {
         console.log(`${message} is published to topic: ${topic} from Publish call`)
-        console.log(queue.print())
+        console.log(queue.elements[0])
       }
     })
   }
-  // nMessage({topic}){
-  //    return this.latestMessages[topic] || ""
-  // }
+ 
     
+  newMessage({topic}){
+    // return this.latestMessages[topic] || ""
+
+       if(this.returnMessage){
+        return this.returnMessage[topic]
+       }else{
+        return 'no return message'
+       }
+    // return queue.dequeue();
+}
+
   getLatestMessage({ topic }) {
     // return this.latestMessages[topic] || ""
+    this.returnMessage = queue.dequeue()
+    // console.log(this.elements[0])
+    // return this.elements[0].topic || ""
+    return this.returnMessage[topic] || ""
   }
 }
 
