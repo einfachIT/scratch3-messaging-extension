@@ -2,11 +2,49 @@ const BlockType = require("../../extension-support/block-type")
 const ArgumentType = require("../../extension-support/argument-type")
 const TargetType = require("../../extension-support/target-type")
 
+
+
+class Queue {
+  constructor() {
+     this.elements = [];
+  }
+  
+  enqueue(node) {
+     this.elements.push(node);
+  }
+
+  dequeue() {
+     if(this.elements.length > 0) { 
+         return this.elements.shift();
+     } else {
+         return 'Underflow situation';
+     }
+  }
+  isEmpty() {
+     return this.elements.length == 0;
+  }
+  
+  front() {
+     if(this.elements.length > 0) {
+         return this.elements[0];
+     } else {
+         return "The Queue is empty!";
+     }
+  }
+  
+  print() {
+     return this.elements;
+  }
+}
+
+const queue = new Queue();
+
 class Scratch3YourExtension {
   constructor(runtime) {
     this.runtime = runtime
     this.client = null
     this.latestMessages = {}
+    
   }
 
   /**
@@ -115,7 +153,8 @@ class Scratch3YourExtension {
       
       this.client.on("message", (topic, message) => {
         // Store the latest message for the topic
-          this.latestMessages[topic] = message.toString();
+          // this.latestMessages[topic] = message.toString();
+          queue.enqueue({[topic]: message.toString()});
       })
       script.onerror = (error) => {
         console.error("Something went wrong while loading MQTT library:", error)
@@ -133,7 +172,7 @@ class Scratch3YourExtension {
       )
       return
     }
-    this.client.subscribe(topic,{ qos: 0 }, (err) => {
+    this.client.subscribe(topic,{ qos: 1 }, (err) => {
       if (err) {
         console.log(err)
       } else {
@@ -143,7 +182,10 @@ class Scratch3YourExtension {
   }
 
   newMessage({topic}){
-        return this.latestMessages[topic] || ""
+        // return this.latestMessages[topic] || ""
+        // console.log(queue.print());
+    
+        return queue.dequeue();
   }
 
   sendMessage({ topic, message }) {
@@ -159,6 +201,7 @@ class Scratch3YourExtension {
         console.log(err)
       } else {
         console.log(`${message} is published to topic: ${topic} from Publish call`)
+        console.log(queue.print())
       }
     })
   }
@@ -167,7 +210,7 @@ class Scratch3YourExtension {
   // }
     
   getLatestMessage({ topic }) {
-    return this.latestMessages[topic] || ""
+    // return this.latestMessages[topic] || ""
   }
 }
 
