@@ -2,80 +2,11 @@ const BlockType = require("../../extension-support/block-type")
 const ArgumentType = require("../../extension-support/argument-type")
 const TargetType = require("../../extension-support/target-type")
 
-class Node {
-  constructor(data) {
-     this.data = data;
- }
-}
-
-class Queue {
-  constructor() {
-     this.elements = [];
-  }
-  
-  enqueue(item) {
-     this.elements.push(item);
-  }
-
-  dequeue() {
-     if(this.elements.length > 0) { 
-         return this.elements.shift();
-     } else {
-         return 'Underflow situation';
-     }
-  }
-  isEmpty() {
-     return this.elements.length == 0;
-  }
-  
-  front() {
-     if(this.elements.length > 0) {
-         return this.elements[0];
-     } else {
-         return "The Queue is empty!";
-     }
-  }
-  
-  print() {
-     return this.elements;
-  }
-}
-
-
-
-// class TopicQueue {
-//   constructor() {
-//     this.queues = []
-//   }
-
-//   enqueue(item) {
-//     this.queues.push(item);
-//   }
-
-//   dequeue(topic) {
-//     const index = this.queues.findIndex(item => item.topic === topic);
-//     if (index !== -1) {
-//       const removedItem = this.queues.splice(index, 1)[0];
-//       return removedItem.message;
-//     } else {
-//       return 'Item not found';
-//     }
-//   }
-
-//   isEmpty(topic) {
-//     const queue = this.queues[topic];
-//     return !queue || queue.length === 0;
-//   }
-// }
-// const topicQueue = new TopicQueue();
-const queue = new Queue();
-
 class Scratch3YourExtension {
   constructor(runtime) {
     this.runtime = runtime
     this.client = null
-    this.latestMessages = {}
-    this.returnMessage = null
+    this.latestMessages = []
   }
 
   /**
@@ -183,11 +114,8 @@ class Scratch3YourExtension {
         })
       
       this.client.on("message", (topic, message) => {
-        // Store the latest message for the topic
-          // this.latestMessages[topic] = message.toString();
-          queue.enqueue({[topic]: message.toString()});
-          // topicQueue.enqueue({ topic: topic, message: message.toString() });
-          console.log(queue.elements)
+
+          this.latestMessages.push({topic: topic, message: message.toString()})
       })
       script.onerror = (error) => {
         console.error("Something went wrong while loading MQTT library:", error)
@@ -214,7 +142,6 @@ class Scratch3YourExtension {
     })
   }
 
-
   sendMessage({ topic, message }) {
     if (!this.client) {
       console.log(
@@ -228,29 +155,29 @@ class Scratch3YourExtension {
         console.log(err)
       } else {
         console.log(`${message} is published to topic: ${topic} from Publish call`)
-        console.log(queue.elements[0])
       }
     })
   }
  
-    
   newMessage({topic}){
-    // return this.latestMessages[topic] || ""
-
-       if(this.returnMessage){
-        return this.returnMessage[topic]
-       }else{
-        return 'no return message'
-       }
-    // return queue.dequeue();
+    if(this.latestMessages.length > 0){
+      const retMessage = this.latestMessages[0] 
+      if(retMessage.topic == topic){
+        return retMessage.message || ""
+      }
+    }
 }
 
   getLatestMessage({ topic }) {
-    // return this.latestMessages[topic] || ""
-    this.returnMessage = queue.dequeue()
-    // console.log(this.elements[0])
-    // return this.elements[0].topic || ""
-    return this.returnMessage[topic] || ""
+
+    if(this.latestMessages.length > 0){
+      
+      const retMessage = this.latestMessages.shift()
+      if(retMessage.topic == topic){
+        return retMessage.message || ""
+      }
+      
+    }
   }
 }
 
