@@ -65,7 +65,8 @@
    ```bash
    sudo mosquitto -c /etc/mosquitto/mosquitto.conf
    ```
-   - Restart the broker server by the following command (COMMENT BASTIAN: this does not start mosquitto, but configures mosquitto to be automatically startet at bootup, change wording)
+   - `Restart the broker server by the following command (COMMENT BASTIAN: this does not start mosquitto, but configures mosquitto to be automatically startet at bootup, change wording)`
+   - Configures mosquitto to be automatically startet at bootup by the following command
 
    ```bash
    sudo systemctl enable mosquitto
