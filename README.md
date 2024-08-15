@@ -83,8 +83,10 @@
               ```bash
               sudo apt install ufw
               ```
+              It will ask `Do you want to continue? [Y/n]` \
+              press `Y` and hit `enter` key to continue installion.
      
-        2. **Enable (UFW):** \
+        3. **Enable (UFW):** \
              to enable (UFW) run following command in the terminal  
      
               ```bash
