@@ -208,7 +208,7 @@ mkdir scratch3_mqtt
   COMMENT BASTIAN: this does not work. 1. the url is wrong mqtt-extension is your-scratch-extension. 2. this is a private repo, but also then I get 404:file not found when downloading with curl. Did you test this?
 ```bash
 cd scratch3_mqtt
-curl -O -L https://raw.githubusercontent.com/einfachIT/scratch3-messaging-extension/master/mqtt-extension/index.js
+curl -H "Authorization: token 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" -L "https://raw.githubusercontent.com/einfachIT/scratch3-messaging-extension/master/your-scratch-extension/index.js" -o index.js
 ```
 ![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/49470260-29ec-4208-b312-a0b9588f2796)
 
@@ -243,10 +243,10 @@ cd mqtt
 ### Donwload and Add Icons for the Extension
 Place your extension's icon images (.png and .svg) inside the newly created directory `mqtt` in `scratch-gui/src/lib/libraries/extensions`.
 ```bash
-curl -O -L https://raw.githubusercontent.com/einfachIT/scratch3-messaging-extension/master/mqtt.png
+curl -H "Authorization: token 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" -L "https://raw.githubusercontent.com/einfachIT/scratch3-messaging-extension/mqtt_extension_v1/mqtt.png" -o mqtt.png
 ```
 ```bash
-curl -O -L https://raw.githubusercontent.com/einfachIT/scratch3-messaging-extension/master/mqtt-small.svg
+curl -H "Authorization: token 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" -L "https://raw.githubusercontent.com/einfachIT/scratch3-messaging-extension/master/mqtt-small.svg" -o mqtt-small.svg
 ```
   
 ![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/aead260e-cd13-4bf1-8aa9-4fa161b4e796)
