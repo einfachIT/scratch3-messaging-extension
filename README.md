@@ -117,6 +117,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 ``` 
 
    - To install Node and NPM, you should run the the following commands
+   - open new shell (terminal)
     
 ```bash
 nvm install node
