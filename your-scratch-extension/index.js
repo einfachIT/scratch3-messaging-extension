@@ -102,7 +102,7 @@ class Scratch3YourExtension {
 
         // Initialize the MQTT client
         // this.client = mqtt.connect("wss://test.mosquitto.org:8081/mqtts")
-        this.client = mqtt.connect("http://localhost:1883")
+        this.client = mqtt.connect("http://localhost:8883")
         // Event handlers for MQTT client
         this.client.on("connect", () => {
           console.log("Connected to MQTT broker")
