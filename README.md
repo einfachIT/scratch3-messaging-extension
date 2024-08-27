@@ -28,11 +28,11 @@
 # Installing and Configuring Mosquitto MQTT broker server locally in the (Raspberry Pi)
 
 <a id="mosquitto-clients"></a>
-   ## Installation of mosquitto and mosquitto-clients 
+   ## Installation of mosquitto 
    - we need to install mosquitto and mosquitto-clients for installing Mosquitto MQTT broker server locally in the (Raspberry Pi) 
          run the following command in the terminal and hit Enter
    ```bash    
-       sudo apt-get install -y mosquitto mosquitto-clients
+       sudo apt-get install -y mosquitto
    ```
     
    <a id="localhost"></a>
@@ -49,7 +49,6 @@
    - Add the following code to the end of mosquitto.conf file
 
    ```bash
-   listener 1883
    listener 8883
    protocol websockets
    allow_anonymous true
@@ -65,12 +64,7 @@
    ```bash
    sudo mosquitto -c /etc/mosquitto/mosquitto.conf
    ```
-   - `Restart the broker server by the following command (COMMENT BASTIAN: this does not start mosquitto, but configures mosquitto to be automatically startet at bootup, change wording)`
-   - Configures mosquitto to be automatically startet at bootup by the following command
 
-   ```bash
-   sudo systemctl enable mosquitto
-   ```
    - now the broker server will listen to the `htpp://localhost:8883/` which is configured in the mqtt extension code.
 
    <a id="UFW"></a>
@@ -158,11 +152,7 @@ git clone https://github.com/llk/scratch-vm
 cd scratch-vm
 npm install
 ```
-Note: if there is Overriding peer dependency error on npm install
-   - Run it with `--legacy-peer-deps`
-```bash
-npm install --legacy-peer-deps
-```
+
   - Install Link dependency
 ```bash
 npm link
@@ -176,11 +166,7 @@ npm link
 cd ../scratch-gui
 npm install
 ```
-Note: if there is Overriding peer dependency error on npm install
-   - Run it with `--legacy-peer-deps`
-```bash
-npm install --legacy-peer-deps
-```
+
   - Install Link dependency with scratch-vm
 ```bash
 npm link scratch-vm
@@ -204,8 +190,7 @@ mkdir scratch3_mqtt
 <a id="DownloadExtensionCode"></a>
 ### Download Extension Code
   Navigate to the new created directory `scratch3_mqtt` and download the custom extension index.js file
-
-  COMMENT BASTIAN: this does not work. 1. the url is wrong mqtt-extension is your-scratch-extension. 2. this is a private repo, but also then I get 404:file not found when downloading with curl. Did you test this?
+  
 ```bash
 cd scratch3_mqtt
 curl -H "Authorization: token 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" -L "https://raw.githubusercontent.com/einfachIT/scratch3-messaging-extension/master/your-scratch-extension/index.js" -o index.js
@@ -267,7 +252,7 @@ import mqttInsetIconURL from "./mqtt/mqtt-small.svg";
 
  add the following lines to the export default array
 
-find **export default = [** pase it here   COMMENT BASTIAN: fix indentation, so opening and closing brackets match indentation.
+find **export default = [ pase it here ]** 
 
 ```javascript
  {
