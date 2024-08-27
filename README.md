@@ -293,10 +293,10 @@ npm start
 go the browser and run the following URL \
 
 ```bash
-http://localhost:8602/
+http://localhost:8601/
 ```
 
-     <a id="HowtoUseMQTTExtension"></a>
+<a id="HowtoUseMQTTExtension"></a>
 # How to Use MQTT Extension
 
  <a id="Overview"></a>
