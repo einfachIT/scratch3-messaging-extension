@@ -304,7 +304,7 @@ http://localhost:8601/
 
    The MQTT Extension for Scratch 3 allows you to connect, subscribe, and publish messages to an MQTT broker. This guide will help you get started with using the extension in your Scratch projects.
 
-    <a id="Load the Extension"></a>
+<a id="Load the Extension"></a>
     
 ## Load the Extension:
    - In the Scratch interface, click on the "Extensions" button (a puzzle piece icon at the bottom left).
@@ -321,7 +321,7 @@ http://localhost:8601/
 
 
 
- <a id="UsingMQTTBlocks"></a>
+<a id="UsingMQTTBlocks"></a>
 ## Using MQTT Blocks:
    
    - **Connect to MQTT Broker:**
