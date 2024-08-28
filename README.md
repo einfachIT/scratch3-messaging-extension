@@ -29,7 +29,7 @@
 
 <a id="mosquitto-clients"></a>
    ## Installation of mosquitto 
-   - we need to install mosquitto and mosquitto-clients for installing Mosquitto MQTT broker server locally in the (Raspberry Pi) 
+   - we need to install mosquitto MQTT broker server locally in the (Raspberry Pi) 
          run the following command in the terminal and hit Enter
    ```bash    
        sudo apt-get install -y mosquitto
