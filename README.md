@@ -68,24 +68,7 @@
    - now the broker server will listen to the `htpp://localhost:8883/` which is configured in the mqtt extension code.
 
    <a id="UFW"></a>
-# Installing Uncomplicated Firewall UFW
-   - we will install UFV firewall to block all other connection except localhost to access mosquittio broker server from scratch enviroment.
 
-        1. **Install (UFW):** \
-              to install (UFW) run following command in the terminal. 
-     
-              ```bash
-              sudo apt install ufw
-              ```
-              It will ask `Do you want to continue? [Y/n]` \
-              press `Y` and hit `enter` key to continue installion.
-     
-        3. **Enable (UFW):** \
-             to enable (UFW) run following command in the terminal  
-     
-              ```bash
-              sudo ufw enable
-              ```   
 
 <a id="Scratch-3-with-Custom-Extension-Installation-Guide"> </a>
 # Scratch 3 with Custom Extension Installation Guide (Raspberry Pi) 
