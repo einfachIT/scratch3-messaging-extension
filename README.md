@@ -90,18 +90,30 @@ This guide outlines the steps to install Scratch 3 on your Raspberry Pi and inte
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 ```
+
 **Note : Close the shell and open a new shell here, otherwise you get command not found.**
 
-   - To install Node and NPM, you should run the the following commands
+   - To install Node, you should run the the following commands
    - open new shell (terminal)
     
 ```bash
 nvm install node
 ```
+After that, the installer will clone the nvm repository into ~/.nvm/ directory and you should add some lines below at the end of ~/.bashrc file to load nvm.\
+run the following command in the terminal.
+```bash
+export NVM_DIR="$HOME/.nvm"
+# This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# This loads nvm bash_completion
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+```
 
+ - To install NPM, you should run the the following commands
 ```bash
 nvm install --latest-npm
 ```
+
 <a id="Create-a-Workspace-Directory"></a>
 ## Create a Workspace Directory
 
