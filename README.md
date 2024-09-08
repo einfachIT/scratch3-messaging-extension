@@ -49,7 +49,7 @@
    - Add the following code to the end of mosquitto.conf file
 
    ```bash
-   listener 8883
+   listener 1883
    listener 8883
    protocol websockets
    allow_anonymous true
