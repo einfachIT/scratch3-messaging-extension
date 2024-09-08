@@ -246,7 +246,7 @@ import mqttInsetIconURL from "./mqtt/mqtt-small.svg";
 
  add the following lines to the export default array
 
-find **export default = [ pase it here ]** 
+find **export default = [ paste it here ]** 
 
 ```javascript
  {
