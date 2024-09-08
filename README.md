@@ -53,7 +53,7 @@
    protocol websockets
    allow_anonymous true
    ```
-   ![image](https://github.com/user-attachments/assets/5d69bb3e-3240-4d0b-887f-52a294fe162d)
+   ![image](https://github.com/user-attachments/assets/c4f90005-373c-4195-98bd-55f7e4b76077)
 
    - after adding the above code press `CTRL + X` \
        and then press `Y` key from keyboard 
