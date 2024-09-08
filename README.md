@@ -50,6 +50,7 @@
 
    ```bash
    listener 8883
+   listener 8883
    protocol websockets
    allow_anonymous true
    ```
