@@ -214,7 +214,7 @@ after adding the above line save it with `ctrl+s`
 Create a new directory by the name of `mqtt` within `scratch-gui/src/lib/libraries/extensions`.
 
 ```bash
-cd ../../../../scratch-gui/src/lib/libraries/extensions
+cd scratch3/scratch-gui/src/lib/libraries/extensions
 mkdir mqtt
 cd mqtt
 ```
