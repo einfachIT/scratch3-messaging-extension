@@ -134,8 +134,8 @@ cd scratch3
 Clone the Scratch GUI and VM repositories:
 
 ```bash
-git clone https://github.com/llk/scratch-gui
-git clone https://github.com/llk/scratch-vm
+git clone --filter=tree:0 https://github.com/llk/scratch-gui
+git clone --filter=tree:0 https://github.com/llk/scratch-vm
 ```
 ![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/23d5ebb1-352c-497d-94ad-61b482c79c55)
 ![image](https://github.com/einfachIT/scratch3-messaging-extension/assets/70327713/bf0608b5-aac2-4a6f-98fb-653aafbd5a09)
