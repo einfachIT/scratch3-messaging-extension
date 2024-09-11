@@ -24,51 +24,7 @@
    3. [Using MQTT Blocks](#UsingMQTTBlocks)
 
 
-<a id="Mosquitto"></a>
-# Installing and Configuring Mosquitto MQTT broker server locally in the (Raspberry Pi)
 
-<a id="mosquitto-clients"></a>
-   ## Installation of mosquitto 
-   - we need to install mosquitto MQTT broker server locally in the (Raspberry Pi) \
-         run the following command in the terminal and hit Enter
-   ```bash    
-       sudo apt-get install -y mosquitto
-   ```
-    
-   <a id="localhost"></a>
-   ## Configure Mosquitto to listen `localhost` in port `8883`
-      
-   - After installing Mosquitto and  mosquitto-clients, you need to configure it to use in our mqtt extension. The location of the `mosquitto.conf` file is: 
-      `/etc/mosquitto/mosquitto.conf`
-           
-   - Now open mosquitto.conf file with the following command:
-
-   ```bash
-   sudo nano /etc/mosquitto/mosquitto.conf 
-   ```
-   - Add the following code to the end of mosquitto.conf file
-
-   ```bash
-   listener 1883
-   listener 8883
-   protocol websockets
-   allow_anonymous true
-   ```
-   ![image](https://github.com/user-attachments/assets/1b39cd90-9ad9-45df-9e5d-0aaa19757005)
-
-   - after adding the above code press `CTRL + X` \
-       and then press `Y` key from keyboard 
-       and then press `Enter` key to save the changes.
-
-   - load the configuration file you just created. Insert the following command into the terminal and click Enter:
-
-   ```bash
-   sudo mosquitto -c /etc/mosquitto/mosquitto.conf
-   ```
-
-   - now the broker server will listen to the `htpp://localhost:8883/` which is configured in the mqtt extension code.
-
-   <a id="UFW"></a>
 
 
 <a id="Scratch-3-with-Custom-Extension-Installation-Guide"> </a>
@@ -276,6 +232,52 @@ Save the file with **CTRL + S**
 
 
 <a id="StartScratch"></a>
+
+<a id="Mosquitto"></a>
+# Installing and Configuring Mosquitto MQTT broker server locally in the (Raspberry Pi)
+
+<a id="mosquitto-clients"></a>
+   ## Installation of mosquitto 
+   - we need to install mosquitto MQTT broker server locally in the (Raspberry Pi) \
+         run the following command in the terminal and hit Enter
+   ```bash    
+       sudo apt-get install -y mosquitto
+   ```
+    
+   <a id="localhost"></a>
+   ## Configure Mosquitto to listen `localhost` in port `8883`
+      
+   - After installing Mosquitto and  mosquitto-clients, you need to configure it to use in our mqtt extension. The location of the `mosquitto.conf` file is: 
+      `/etc/mosquitto/mosquitto.conf`
+           
+   - Now open mosquitto.conf file with the following command:
+
+   ```bash
+   sudo nano /etc/mosquitto/mosquitto.conf 
+   ```
+   - Add the following code to the end of mosquitto.conf file
+
+   ```bash
+   listener 1883
+   listener 8883
+   protocol websockets
+   allow_anonymous true
+   ```
+   ![image](https://github.com/user-attachments/assets/1b39cd90-9ad9-45df-9e5d-0aaa19757005)
+
+   - after adding the above code press `CTRL + X` \
+       and then press `Y` key from keyboard 
+       and then press `Enter` key to save the changes.
+
+   - load the configuration file you just created. Insert the following command into the terminal and click Enter:
+
+   ```bash
+   sudo mosquitto -c /etc/mosquitto/mosquitto.conf
+   ```
+
+   - now the broker server will listen to the `htpp://localhost:8883/` which is configured in the mqtt extension code.
+
+
 ## Start Scratch
 Navigate to the `scratch-gui` and run the following command
 
